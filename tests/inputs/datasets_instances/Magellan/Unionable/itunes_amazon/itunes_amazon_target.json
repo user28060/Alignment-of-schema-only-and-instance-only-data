@@ -1,0 +1,29 @@
+{
+  "col_0":{
+    "type":"int"
+  },
+  "col_1":{
+    "type":"text"
+  },
+  "col_2":{
+    "type":"text"
+  },
+  "col_3":{
+    "type":"text"
+  },
+  "col_4":{
+    "type":"text"
+  },
+  "col_5":{
+    "type":"real"
+  },
+  "col_6":{
+    "type":"text"
+  },
+  "col_7":{
+    "type":"text"
+  },
+  "col_8":{
+    "type":"text"
+  }
+}

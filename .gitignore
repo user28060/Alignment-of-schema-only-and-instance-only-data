@@ -1,0 +1,11 @@
+.vscode/
+.notebook/
+.DS_Store
+Analysis/
+.github/
+.gitignore
+./tests/inputs/datasets_instances/
+tests/inputs/datasets_instances/ChEMBL/*
+tests/inputs/datasets_instances/TPC-DI/*
+tests/inputs/datasets_instances/Wikidata/*
+src/schema_instance/__pycache__/*

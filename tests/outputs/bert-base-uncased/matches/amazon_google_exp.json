@@ -1,0 +1,20 @@
+[
+    {
+        "(('amazon_google_exp_source', np.str_('title')), ('amazon_google_exp_target', np.str_('col_1')))":0.8095304966,
+        "(('amazon_google_exp_source', np.str_('title')), ('amazon_google_exp_target', np.str_('col_2')))":0.7897776484,
+        "(('amazon_google_exp_source', np.str_('price')), ('amazon_google_exp_target', np.str_('col_3')))":0.7897271395,
+        "(('amazon_google_exp_source', np.str_('manufacturer')), ('amazon_google_exp_target', np.str_('col_2')))":0.7860082507,
+        "(('amazon_google_exp_source', np.str_('manufacturer')), ('amazon_google_exp_target', np.str_('col_1')))":0.7785620451,
+        "(('amazon_google_exp_source', np.str_('id')), ('amazon_google_exp_target', np.str_('col_0')))":0.6583189785,
+        "(('amazon_google_exp_source', np.str_('id')), ('amazon_google_exp_target', np.str_('col_1')))":0.0,
+        "(('amazon_google_exp_source', np.str_('id')), ('amazon_google_exp_target', np.str_('col_2')))":0.0,
+        "(('amazon_google_exp_source', np.str_('id')), ('amazon_google_exp_target', np.str_('col_3')))":0.0,
+        "(('amazon_google_exp_source', np.str_('title')), ('amazon_google_exp_target', np.str_('col_0')))":0.0,
+        "(('amazon_google_exp_source', np.str_('title')), ('amazon_google_exp_target', np.str_('col_3')))":0.0,
+        "(('amazon_google_exp_source', np.str_('manufacturer')), ('amazon_google_exp_target', np.str_('col_0')))":0.0,
+        "(('amazon_google_exp_source', np.str_('manufacturer')), ('amazon_google_exp_target', np.str_('col_3')))":0.0,
+        "(('amazon_google_exp_source', np.str_('price')), ('amazon_google_exp_target', np.str_('col_0')))":0.0,
+        "(('amazon_google_exp_source', np.str_('price')), ('amazon_google_exp_target', np.str_('col_1')))":0.0,
+        "(('amazon_google_exp_source', np.str_('price')), ('amazon_google_exp_target', np.str_('col_2')))":0.0
+    }
+]

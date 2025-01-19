@@ -1,0 +1,23 @@
+{
+    "id": {
+        "type": "int"
+    },
+    "name": {
+        "type": "text"
+    },
+    "postal address": {
+        "type": "text"
+    },
+    "city": {
+        "type": "text"
+    },
+    "phone": {
+        "type": "text"
+    },
+    "type": {
+        "type restaurant": "text"
+    },
+    "class": {
+        "type": "int"
+    }
+}

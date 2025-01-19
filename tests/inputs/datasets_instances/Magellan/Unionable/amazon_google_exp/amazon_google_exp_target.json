@@ -1,0 +1,14 @@
+{
+  "col_0":{
+    "type":"int"
+  },
+  "col_1":{
+    "type":"text"
+  },
+  "col_2":{
+    "type":"text"
+  },
+  "col_3":{
+    "type":"real"
+  }
+}

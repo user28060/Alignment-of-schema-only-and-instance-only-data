@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "schema-instance"
+version = "0.1.0"
+description = ""
+authors = ["user28060 <kired.nour2028@outlook.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.3"
+openai = "^1.59.8"
+chardet = "^5.2.0"
+tiktoken = "^0.8.0"
+scikit-learn = "^1.6.1"
+transformers = "^4.48.0"
+torch = "^2.5.1"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+autoflake = "^2.3.1"
+isort = "^5.13.2"
+black = "^24.10.0"
+mdformat = "^0.7.21"
+flake8 = "^7.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+schema-instance = "src.schema_instance.main:cli"
+format = "format_files:format_files"
