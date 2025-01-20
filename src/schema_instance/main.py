@@ -165,9 +165,12 @@ def matching(
         generative_model + "_" + embedding_model + "_" + dataset_name + ".csv",
     )
     name = dataset_name.replace("_source", "")
-    path = os.getcwd()
+    
+    path= os.getcwd().split('/')
+    i=path.index('Alignment-of-schema-only-and-instance-only-data')
+    folder_path= "/".join(path[:i+1])
     path_file = f"/tests/outputs/{embedding_model}/matches/{name}.json"
-    path_matches = path + path_file
+    path_matches = folder_path + path_file
     with open(path_matches, "r") as file:
         data = json.load(file)
         print(data)

@@ -1,7 +1,5 @@
 .vscode/
-.notebook/
 .DS_Store
-Analysis/
 .github/
 .gitignore
 ./tests/inputs/datasets_instances/

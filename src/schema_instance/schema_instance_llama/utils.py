@@ -55,8 +55,10 @@ def get_matches(list_matchs, name_s1, name_s2):
 
 
 def compute_metrics(name_s1, name_s2, mapping_path, list_matchs, model_name):
-    print("-----geeevicvcHEEEYY-----")
-    path = os.getcwd()
+    path= os.getcwd().split('/')
+    i=path.index('Alignment-of-schema-only-and-instance-only-data')
+    folder_path= "/".join(path[:i+1])
+    
     list_matchs = dict(
         sorted(list_matchs.items(), key=lambda item: item[1], reverse=True)
     )
@@ -68,7 +70,7 @@ def compute_metrics(name_s1, name_s2, mapping_path, list_matchs, model_name):
         f1_score(matches, gold, one_to_one=True),
     )
     mapping_path = os.path.join(
-        path + "/tests/outputs",
+        folder_path + "/tests/outputs",
         model_name + "/matches",
         f"{name_s1}.json",
     )
@@ -172,7 +174,9 @@ def save_matchers(
     name_s1,
     path="/tests/outputs/",
 ):
-    path = os.getcwd() + path
+    path_= os.getcwd().split('/')
+    i=path_.index('Alignment-of-schema-only-and-instance-only-data')
+    folder_path= "/".join(path[:i+1]) + path
     """
     Optimized save function for matchers using numpy arrays.
     """
@@ -220,12 +224,14 @@ def save_embeddings(
         name_s1 (str): Identifier for the saved file.
         path (str): Base path where files will be saved.
     """
-    path = os.getcwd() + path
+    path_= os.getcwd().split('/')
+    i=path_.index('Alignment-of-schema-only-and-instance-only-data')
+    folder_path= "/".join(path[:i+1]) + path
     embeddings_list = [df_DS1, df_DS2]
     embeddings_names = ["Embedd_DS1", "Embedd_DS2"]
 
     for i, embed_df in enumerate(embeddings_list):
-        embedding_dir = os.path.join(path, model_name, embeddings_names[i])
+        embedding_dir = os.path.join(folder_path, model_name, embeddings_names[i])
         embedding_path = os.path.join(embedding_dir, f"{name_s1}.csv")
         os.makedirs(embedding_dir, exist_ok=True)
 
@@ -245,15 +251,18 @@ def save_auxiliary_informations(
     """
     Save auxiliary information in JSON format.
     """
-    path = os.getcwd() + path
+    path_= os.getcwd().split('/')
+    i=path_.index('Alignment-of-schema-only-and-instance-only-data')
+    folder_path= "/".join(path[:i+1]) + path
+    
     extended_sc1_path = os.path.join(
-        path, "extanded_attributes", f"{name_s1}_extended_sc1.json"
+        folder_path, "extanded_attributes", f"{name_s1}_extended_sc1.json"
     )
     generated_attributes_s2_path = os.path.join(
-        path, "generated_attributes", f"{name_s1}_generated_attributes_s2.json"
+        folder_path, "generated_attributes", f"{name_s1}_generated_attributes_s2.json"
     )
     generated_instances_s1_path = os.path.join(
-        path, "generated_instances", f"{name_s1}_generated_instances_s1.json"
+        folder_path, "generated_instances", f"{name_s1}_generated_instances_s1.json"
     )
 
     with open(extended_sc1_path, "w") as f:
