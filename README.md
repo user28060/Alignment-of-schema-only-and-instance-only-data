@@ -23,8 +23,6 @@ iliary Information Generation · Matcher Combination.
 
 ### Summary of the experimental evaluation
 
-Our experimental assessment aims at (i) evaluating the efficiency of our proposal, and (ii) evaluating the usability of the proposed centrality metrics in a real application.
-
 ***Technical environment***
 
 We deploy our approach and its variations using PyTorch version 1.6.0 with CPU support. The experiments were conducted on a system equipped with an Intel Core i7-10750H processor, featuring 6 cores running at 2.6 GHz (up to 5.0 GHz with Turbo Boost). The system has 16 GB of RAM, which provides sufficient memory for the experiments.
@@ -98,8 +96,8 @@ The repository targets python `3.10` and higher.
 
 ### Llama-3.2
 
-
-  API available at `http://localhost:11434/api/chat`.
+- iInstall Ollama from [Ollama](https://ollama.com/download)
+- API available at `http://localhost:11434/api/chat`.
 
 ______________________________________________________________________
 
@@ -109,28 +107,45 @@ ______________________________________________________________________
 
 ```python
 import openai
-
 openai.api_key = "your-api-key"
 response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
-    messages=[{"role": "user", "content": "Hello, GPT!"}]
+    messages=[{"role": "user", "content": "What is the capital of France?"}]
 )
 print(response["choices"][0]["message"]["content"])
+# Paris
 ```
 
 #### Llama-3.2 Example
+
+```sh
+ollama run llama3.2
+```
 
 ```python
 import requests
 
 llama_api_url = "http://localhost:11434/api/chat"
-payload = {"message": "Hello, Llama!"}
-response = requests.post(llama_api_url, json=payload)
 
-if response.status_code == 200:
-    print("Llama's response:", response.json().get("reply"))
-else:
-    print("Error:", response.status_code)
+data = {
+    "model": "llama3.2",
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant.",
+        },
+        {"role": "user", "content": "What is the capital of France?"},
+    ],
+    "stream": False,
+}
+
+headers = {"Content-Type": "application/json"}
+
+response = requests.post(llama_api_url, headers=headers, json=data)
+return_result = str(response.json()["message"]["content"])
+
+print(return_result)
+# The capital of France is Paris.'
 ```
 
 ______________________________________________________________________
@@ -203,9 +218,8 @@ Options:
   -i2, --input-I2 TEXT            path to text file  [required]
   --generative-model [gpt|llama]  Choose the generative model to use: 'gpt' or
                                   'llama'.
-  --embedding-model [...]
-                                  Choose an embedding model from the
-                                  predefined list.
+  --embedding-model [...]         Choose an embedding model from the predefined
+                                  list.
   -o, --output TEXT               output directory where json file will be
                                   written  [default: .]
   -f, --force                     overwrite existing file
