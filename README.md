@@ -96,7 +96,7 @@ The repository targets python `3.10` and higher.
 
 ### Llama-3.2
 
-- iInstall Ollama from [Ollama](https://ollama.com/download)
+- Install Ollama from [Ollama](https://ollama.com/download)
 - API available at `http://localhost:11434/api/chat`.
 
 ______________________________________________________________________
